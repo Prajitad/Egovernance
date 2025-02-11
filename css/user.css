@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1, h2 {
+  color: #333;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+textarea {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Complaint List Styles */
+#complaintsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.complaint-item {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.complaint-item p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+button {
+  padding: 8px 12px;
+  font-size: 14px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.edit-btn {
+  background-color: #ffa500;
+  color: white;
+  border: none;
+}
+
+button.edit-btn:hover {
+  background-color: #e68900;
+}
+
+button.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+}
+
+button.delete-btn:hover {
+  background-color: #e04343;
+}
+
+/* Logout Button */
+#userLogout {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+#userLogout:hover {
+  background-color: #e53935;
+}
