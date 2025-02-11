@@ -1,11 +1,25 @@
 const userForm = document.getElementById('userForm');
 const complaintsKey = 'complaints'; // Key to store complaints
+const currentUserKey = 'currentUser'; // Key to track logged-in user
 
 let currentEditIndex = null; // To track which complaint is being edited
 
-// Function to load and display complaints
+// Function to get the currently logged-in user
+function getCurrentUser() {
+  return localStorage.getItem(currentUserKey);
+}
+
+// Function to load and display complaints for the logged-in user
 function loadComplaints() {
-  const complaints = JSON.parse(localStorage.getItem(complaintsKey)) || [];
+  const currentUser = getCurrentUser();
+  if (!currentUser) {
+    alert('No user logged in!');
+    window.location.href = 'login.html'; // Redirect if no user is logged in
+    return;
+  }
+
+  const userComplaintsKey = `${complaintsKey}_${currentUser}`;
+  const complaints = JSON.parse(localStorage.getItem(userComplaintsKey)) || [];
   const complaintsList = document.getElementById('complaintsList');
   complaintsList.innerHTML = ''; // Clear previous list
 
@@ -15,6 +29,9 @@ function loadComplaints() {
 
     const complaintText = document.createElement('p');
     complaintText.textContent = complaint;
+
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('button-container');
 
     const editButton = document.createElement('button');
     editButton.textContent = 'Edit';
@@ -26,10 +43,11 @@ function loadComplaints() {
     deleteButton.classList.add('delete-btn');
     deleteButton.onclick = () => deleteComplaint(index);
 
+    buttonContainer.appendChild(editButton);
+    buttonContainer.appendChild(deleteButton);
     complaintDiv.appendChild(complaintText);
-    complaintDiv.appendChild(editButton);
-    complaintDiv.appendChild(deleteButton);
-    
+    complaintDiv.appendChild(buttonContainer);
+
     complaintsList.appendChild(complaintDiv);
   });
 }
@@ -39,56 +57,62 @@ if (userForm) {
   userForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const complaint = document.getElementById('complaint').value.trim();
+    const currentUser = getCurrentUser();
 
-    if (complaint) {
-      let complaints = JSON.parse(localStorage.getItem(complaintsKey)) || [];
-      
-      if (currentEditIndex !== null) {
-        // Editing an existing complaint
-        complaints[currentEditIndex] = complaint;
-        currentEditIndex = null; // Reset edit index after saving
-        alert('Complaint updated!');
-      } else {
-        // Adding a new complaint
-        complaints.push(complaint);
-        alert('Complaint submitted!');
-      }
-
-      // Save updated complaints list to localStorage
-      localStorage.setItem(complaintsKey, JSON.stringify(complaints));
-
-      document.getElementById('complaint').value = ''; // Clear input
-      loadComplaints(); // Reload complaints after submission or update
-
-      // Reset button text
-      const submitButton = document.querySelector('button[type="submit"]');
-      submitButton.textContent = 'Submit Complaint';
+    if (!currentUser) {
+      alert('User not logged in!');
+      return;
     }
+
+    const userComplaintsKey = `${complaintsKey}_${currentUser}`;
+    let complaints = JSON.parse(localStorage.getItem(userComplaintsKey)) || [];
+
+    if (currentEditIndex !== null) {
+      complaints[currentEditIndex] = complaint;
+      currentEditIndex = null;
+      alert('Complaint updated!');
+    } else {
+      complaints.push(complaint);
+      alert('Complaint submitted!');
+    }
+
+    localStorage.setItem(userComplaintsKey, JSON.stringify(complaints));
+
+    document.getElementById('complaint').value = ''; // Clear input
+    loadComplaints(); // Reload complaints after submission
+
+    const submitButton = document.querySelector('button[type="submit"]');
+    submitButton.textContent = 'Submit Complaint';
   });
 }
 
 // Edit Complaint
 function editComplaint(index) {
-  const complaints = JSON.parse(localStorage.getItem(complaintsKey)) || [];
+  const currentUser = getCurrentUser();
+  if (!currentUser) return;
+
+  const userComplaintsKey = `${complaintsKey}_${currentUser}`;
+  const complaints = JSON.parse(localStorage.getItem(userComplaintsKey)) || [];
   const complaint = complaints[index];
 
-  // Set complaint to the textarea for editing
   document.getElementById('complaint').value = complaint;
 
-  // Change the submit button to save the edited complaint
   const submitButton = document.querySelector('button[type="submit"]');
   submitButton.textContent = 'Save Complaint';
 
-  // Set the index of the complaint being edited
   currentEditIndex = index;
 }
 
 // Delete Complaint
 function deleteComplaint(index) {
-  let complaints = JSON.parse(localStorage.getItem(complaintsKey)) || [];
-  complaints.splice(index, 1); // Remove the complaint
-  localStorage.setItem(complaintsKey, JSON.stringify(complaints));
-  loadComplaints(); // Reload complaints after deletion
+  const currentUser = getCurrentUser();
+  if (!currentUser) return;
+
+  const userComplaintsKey = `${complaintsKey}_${currentUser}`;
+  let complaints = JSON.parse(localStorage.getItem(userComplaintsKey)) || [];
+  complaints.splice(index, 1);
+  localStorage.setItem(userComplaintsKey, JSON.stringify(complaints));
+  loadComplaints();
 }
 
 // Initial Load

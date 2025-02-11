@@ -23,6 +23,6 @@ function checkLocalStorageCapacity() {
   }
   
   checkLocalStorageCapacity();
-  // localStorage.clear();   
+  //localStorage.clear();   
 // this clears the memory in the local storage.
   

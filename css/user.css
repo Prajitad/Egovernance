@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f9;
@@ -43,17 +43,18 @@ textarea {
 }
 
 button {
-  padding: 10px 15px;
+  
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  background-color: #4CAF50;
+  background-color: #30309a;
+  width: 200px;
   color: white;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #5645a0;
 }
 
 button:disabled {
@@ -90,22 +91,28 @@ button {
   margin-top: 10px;
   border-radius: 5px;
   cursor: pointer;
+  gap:10px;
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 button.edit-btn {
-  background-color: #ffa500;
+  width:50px;
+  background-color: #1e5a8b;
   color: white;
   border: none;
 }
 
 button.edit-btn:hover {
-  background-color: #e68900;
+  background-color: #6972d6;
 }
 
 button.delete-btn {
+  width:65px;
   background-color: #ff4d4d;
   color: white;
-  border: none;
+ 
 }
 
 button.delete-btn:hover {
@@ -118,7 +125,7 @@ button.delete-btn:hover {
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  background-color: #f44336;
+  background-color: #7a2c26;
   color: white;
   border: none;
   border-radius: 5px;
@@ -127,5 +134,13 @@ button.delete-btn:hover {
 }
 
 #userLogout:hover {
-  background-color: #e53935;
+  background-color: #541110;
 }
+.button-container {
+  display: flex;
+  gap: 10px; /* Space between the buttons */
+  justify-content: flex-start; /* Align buttons to the left */
+  align-items: center; /* Ensure vertical alignment */
+}
+
+
