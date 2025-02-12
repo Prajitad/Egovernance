@@ -1,0 +1,133 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background:linear-gradient(white,rgb(236, 201, 206));
+    transition: background 3s ease-in-out;
+    
+   
+}
+
+header {
+    background: #130a6e;
+    color: white;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+img{
+    height: 60px;
+    margin-left: -19px;;
+    margin-right: 10px;
+}
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+   
+
+nav ul {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin-left: 900px;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li .btn {
+    background: #ffffff;
+    color: #2c4d8f;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+nav ul li .btn.signup {
+    background: #f8f6fa;
+    color: rgb(199, 77, 154);
+}
+nav ul li .btn:hover {
+    background: #89cee1;
+}
+nav ul li .btn.signup:hover {
+    background: #be6ee0;
+}
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    padding-top: 50px;
+    gap: 40px; 
+    background: url("/img/op1.jpg") no-repeat center center;
+    background-size: contain;
+}
+
+.hero-content {
+    width: 30%;
+    /* height: 500px; */
+    border-radius: 10px;
+    box-shadow:20px 20px 40px 0px rgba(202, 194, 194, 0.868);
+    
+    margin: 280px 90px 9px 90px; 
+}
+
+.hero-text {
+    width: 45%;
+    text-align: left;
+}
+
+
+.hero-text h2, 
+.hero-text p {
+    
+    margin: 10px 0;
+}
+
+.hero h2 {
+    
+    color:whitesmoke;
+    font-size: 46px;
+    margin: 0;
+}
+
+.hero p {
+    
+    color: #f0edf2;
+    font-size: 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #3e32a0;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background: #7175df;
+}

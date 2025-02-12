@@ -1,7 +1,8 @@
 body {
   font-family: Arial, sans-serif;
-  background: #e6f7ff;
-  color: #333;
+  background: url("/img/sup2.png");
+  background-repeat: repeat-x;
+  
   margin: 0;
   padding: 0;
 }
@@ -10,9 +11,9 @@ body {
   max-width: 400px;
   margin: 50px auto;
   padding: 20px;
-  background: #ffffff;
+  background: linear-gradient(rgb(113, 123, 130),rgb(236, 211, 211));
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 4px 2px rgba(235, 230, 230, 0.897);
 }
 
 h1 {
@@ -33,7 +34,7 @@ input, button {
 }
 
 button {
-  background: #007BFF;
+  background: #1c3651;
   color: white;
   border: none;
   cursor: pointer;
