@@ -2,8 +2,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background:linear-gradient(white,rgb(236, 201, 206));
-    transition: background 3s ease-in-out;
+   background:linear-gradient(white,rgb(79, 78, 116));
+    transition: background 4s ease-in-out;
     
    
 }
@@ -65,7 +65,7 @@ nav ul li .btn {
 
 nav ul li .btn.signup {
     background: #f8f6fa;
-    color: rgb(199, 77, 154);
+    color: rgb(223, 124, 187);
 }
 nav ul li .btn:hover {
     background: #89cee1;
@@ -86,7 +86,6 @@ nav ul li .btn.signup:hover {
 
 .hero-content {
     width: 30%;
-    /* height: 500px; */
     border-radius: 10px;
     box-shadow:20px 20px 40px 0px rgba(202, 194, 194, 0.868);
     
@@ -114,7 +113,7 @@ nav ul li .btn.signup:hover {
 
 .hero p {
     
-    color: #f0edf2;
+    color: #eeedf2;
     font-size: 20px;
 }
 

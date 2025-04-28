@@ -1,7 +1,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #bdbbd4;
+  background: url(/img/pic2.jpg);
   margin: 0;
   padding: 0;
 }
@@ -11,7 +11,7 @@ body {
   max-width: 800px;
   margin: 50px auto;
   padding: 20px;
-  background-color: rgb(245, 245, 254);
+  background: linear-gradient(rgb(123, 126, 126),rgb(190, 189, 189));
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
@@ -25,7 +25,6 @@ h2 {
   margin-top: 40px;
 }
 
-/* Form Styles */
 form {
   display: flex;
   flex-direction: column;
@@ -62,7 +61,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Complaint List Styles */
 #complaintsList {
   display: flex;
   flex-direction: column;

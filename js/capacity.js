@@ -1,7 +1,6 @@
 function checkLocalStorageCapacity() {
     let usedBytes = 0;
   
-    // Calculate the size of each item in localStorage
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
       const value = localStorage.getItem(key);
@@ -9,8 +8,7 @@ function checkLocalStorageCapacity() {
     }
   
     console.log(`Used Storage: ${(usedBytes / 1024).toFixed(2)} KB`);
-  
-    // Estimate maximum capacity
+ 
     try {
       const testKey = '__test__';
       const testValue = 'x'.repeat(1024 * 1024); // 1 MB string
@@ -23,6 +21,4 @@ function checkLocalStorageCapacity() {
   }
   
   checkLocalStorageCapacity();
-  //localStorage.clear();   
-// this clears the memory in the local storage.
-  
+ 

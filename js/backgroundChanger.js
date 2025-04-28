@@ -1,15 +1,15 @@
 const colors = [
-    "linear-gradient(rgb(244, 165, 177),white)",
-    "linear-gradient(white, rgb(240, 183, 236),white)",
+    "linear-gradient(white,rgb(181, 194, 248))",
+    "linear-gradient(white, rgb(170, 190, 248))",
     "linear-gradient(white, rgb(181, 191, 248))",
-    "linear-gradient(white, rgb(185, 236, 177))"
+    "linear-gradient(white, rgb(195, 177, 236))"
 ];
 
 let currentIndex = 0;
 
 function changeBackground() {
     document.body.style.background = colors[currentIndex];
-    currentIndex = (currentIndex + 1) % colors.length; // Loop through colors
+    currentIndex = (currentIndex + 1) % colors.length; 
 }
 
-setInterval(changeBackground, 4000);
+setInterval(changeBackground, 6000);
